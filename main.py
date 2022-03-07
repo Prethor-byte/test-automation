@@ -1,19 +1,10 @@
 from selenium import webdriver
 import time
-import os
+
 
 driver = webdriver.Chrome(r"/Praca/python/selenium_drivers/chromedriver.exe")
 
-driver.get('http://www.google.com/')
-
-time.sleep(5) # Let the user actually see something!
-
-search_box = driver.find_element_by_name('q')
-
-search_box.send_keys('ChromeDriver')
-
-search_box.submit()
-
-time.sleep(5) # Let the user actually see something!
-
-driver.quit()
+driver.get("https://www.seleniumeasy.com/test/jquery-download-progress-bar-demo.html")
+driver.implicitly_wait(30)
+my_element = driver.find_element_by_id('downloadButton')
+my_element.click()
